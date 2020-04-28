@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="utf-8" />
+    <title>operator</title>
+</head>
+
+<body>
+    <h2>operator</h2>
+    <h3>all kinds of operator</h3>
+    <p>just like other programming languages, usage is the same with little different</p>
+    <textarea rows="33" cols="100" disabled>
+<script>
+    //arithmetic operator:the operator for mathematic calculation.
+    //example: +, -, *, /, %, ++, --
+    //in javascript, the division operation will only return in floating number.
+
+    //comparison operator:comparison between objects.
+    //example: ==, !=, >, =>, <, =<, ===, !==
+    //=== and !==:these operators are serious compare, it will also compare data type.
+        
+    //assign operator:setting the value of variables.
+    //example: =, +=, -=, *=, /=, %=
+
+    //logic operator:the bit operation
+    //example: &&(AND), ||(OR), !(NOT)
+
+    //priority of operator:
+    /*  1.  .[],.()
+        2.  ++,--,~,!,delete,new,typeof,void
+        3.  *,/,%
+        4.  -,+,string+string
+        5.  <<,>>,<<<
+        6.  <,<=,>,>=,instanceof
+        7.  ==,===,!=,!==
+        8.  &
+        9.  ^
+        10. |               ->8~10 is for digits.
+        11. &&
+        12. ||              ->11~12 is for normal data type.
+        13. ?:
+        14. =,+=,-=,*=,/=,%=
+        15. ,                                                  */
+</script>
+        </textarea>
+    <div>
+        currently no demonstrate
+    </div>
+    <h3>special operators</h3>
+    <textarea rows="20" cols="100" disable>
+<script>
+    //++,--
+    a = 2;
+    console.log("before ++: "+a);
+    b =  10 * ++a;
+    console.log("after ++: "+a+" b:"+b);
+    //in this case:b = 10 * (a + 1)
+            
+    a = 2;
+    console.log("before ++: "+a);
+    c = 10 * a++;
+    console.log("after ++: "+a+" b:"+b);
+    //in this case:c = (10 * a), then a + 1
+    
+    //ternary conditional operator
+    a = 1;b = 2;
+    console.log("ternary conditional operator result: " + (a == b ? true : false));
+    //condition? A:B->if condition is ture, then A, else B.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser
+        <script>
+            //++,--
+            a = 2;
+            console.log("before ++: " + a);
+            b = 10 * ++a;
+            console.log("after ++: " + a + " b:" + b);
+            //in this case:b = 10 * (a + 1)
+
+            a = 2;
+            console.log("before ++: " + a);
+            c = 10 * a++;
+            console.log("after ++: " + a + " b:" + b);
+            //in this case:c = (10 * a), then a + 1
+
+            //ternary conditional operator
+            a = 1;
+            b = 2;
+            console.log("ternary conditional operator result: " + (a == b ? true : false));
+            //condition? A:B->if condition is ture, then A, else B.
+        </script>
+    </div>
+    <br><input type="button" value="go back" onclick="location.href='../javascript_main.html'">
+
+</body>
+
+</html>

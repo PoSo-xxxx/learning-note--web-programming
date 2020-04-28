@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="utf-8" />
+		<title>Local and Global Variable</title>
+	</head>
+	<body>
+		<h2>Local & Global variable</h2>
+		<textarea rows="52" cols="100" disabled>
+<script>
+	//local variables: the life cycle will end before program finish.
+	//usually inside a function, loop, or the structure in a program.
+
+	//global variables: the life cycle will end when program finish.
+	//usually declare at the beginning of a program.
+
+	//1. it is better to use local vairable than global variable
+	//   =>this will make the program more readable and less change to cause error
+	//2. when using global variable, be careful with naming
+	//   =>don't naming with similar name with other variables
+	//3. in javascript, using "let" instead of "var" is better
+	//   ->"let" wont't allow variable assigning with the same names
+
+	var variable = 10;//a global vairable,
+	//declared at the beginning of the script tag.
+
+	//to compare with local variable, here declare a function:
+	function func()
+	{
+		var variable = 15;//a local variable,
+		//declare in a function or loop, disappear when function finish
+
+		console.log("variable in function: "+variable);//this is the value of local variable.
+		//when using or calling a variable, it automatically using the nearest variable.
+
+		for(variable=0;variable<20; variable++)//the local variable in a loop
+		{
+			console.log("variable in a loop: "+variable);
+			//disappear when loop finish
+		}
+
+		//so, to use specific variable(here means local or global):
+		variable = 20;//this will assign a new value to local variable.
+		console.log("local variable: "+variable);
+		//as we said above, it will searc the nearest one.
+
+		window.variable = 30//this will assign a new value to global variable.
+		console.log("global variable: "+window.variable);
+		//window: which mean the whole web page,
+		//so it will search the variable in global area.
+	}
+
+	//the comparsion before and after the "func" is called
+	console.log("global variable before \'func\' is called: "+variable);
+	func();
+	console.log("global variable after \'func\' is called: "+variable);
+
+</script>
+		</textarea>
+		<div>
+			demonstrate<br>press "F12" to open the console of the browser
+			<script>
+
+				var variable = 10;
+				function func()
+				{
+					var variable = 15;
+					console.log("local variable in function: "+variable);
+					for(variable=0;variable<10; variable++)
+					{
+						console.log("local variable in a loop: "+variable);
+					}
+			
+					variable = 20;
+					console.log("local variable in function: "+variable);
+					window.variable = 30
+					console.log("global variable at outside: "+window.variable);
+				}
+				console.log("global variable before \'func\' is called: "+variable);
+				func();
+				console.log("global variable after \'func\' is called: "+variable);
+			</script>
+		</div>
+		<input type="button" value="go back" onclick="location.href='../javascript_main.html'">
+	</body>
+</html>

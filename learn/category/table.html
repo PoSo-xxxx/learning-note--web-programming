@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+<head>
+	<title>table</title>
+    <link rel="stylesheet"href="../learning.css">
+	<meta charset="UTF-8">
+    <meta name="application-name" content="table introdution">
+    <meta name="description" content="this website is for web language learning">
+    <meta name="keyword" content="html, css, javascript">
+    <meta name="author" content="Power Teng">
+    <meta name="generator" content="visual studio code">
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+
+</head>
+<body>
+    <h1>table</h1>
+    <p>a formal table output with set of data.</p>
+
+    <div>
+        <h2>table:</h2>
+    <textarea rows="8" cols="100" disabled>
+<table>
+    <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+    <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+    <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+    <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+    <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+</table>
+    </textarea><br>
+        demonstrate:
+        <table>
+                <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+                <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+                <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+        </table>
+        <ul>
+            <li>tr:the row of table.</li>
+            <li>th:the head of columns in table.</li>
+            <li>td:the column of table.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>group in table:</h2>
+        <p>in a table, it contains: thead, tbody and tfoot.<br>all three parts are no different, and not necessary for declearing a table.<br>just for programmer to use when need.</p>
+        <textarea rows="24" cols="100" disabled>
+<table>
+    <thead>
+        <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+        <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+        <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+        <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+        <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+    </thead>
+    <tbody>
+        <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+        <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+        <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+        <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+        <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+    </tbody>
+    <tfoot>
+        <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+        <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+        <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+        <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+        <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+    </tfoot>
+</table>
+        </textarea><br>
+            demonstrate:
+            <table>
+                <thead>
+                    <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+                    <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                    <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                    <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+                    <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+                </thead>
+                <tbody>
+                    <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+                    <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                    <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                    <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+                    <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><th>head1</th><th>head2</th><th>head3</th><th>head4</th></tr>
+                    <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                    <tr><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                    <tr><td>31</td><td>32</td><td>33</td><td>34</td></tr>
+                    <tr><td>41</td><td>42</td><td>43</td><td>44</td></tr>
+                </tfoot>
+            </table>
+    </div>
+
+    <div>
+    <h2>better table form:</h2>
+    <p>by change the style of table , it will look totally different.</p>
+    <textarea rows="12" cols="130" disabled>
+<style>
+    table#be{border:2px solid aqua;}
+    tr.be,th.be,td.be{border:2px solid aqua;}
+</style>
+<table id="be">
+    <tr class="be"><th class="be">head1</th><th class="be">head2</th><th class="be">head3</th><th class="be">head4</th></tr>
+    <tr class="be"><td class="be">11</td><td class="be">12</td><td class="be">13</td><td class="be">14</td></tr>
+    <tr class="be"><td class="be">21</td><td class="be">22</td><td class="be">23</td><td class="be">24</td></tr>
+    <tr class="be"><td class="be">31</td><td class="be">32</td><td class="be">33</td><td class="be">34</td></tr>
+    <tr class="be"><td class="be">41</td><td class="be">42</td><td class="be">43</td><td class="be">44</td></tr>
+</table>
+    </textarea><br>
+    demonstrate:
+    <style>
+            table#be{border:2px solid aqua;}
+            tr.be,th.be,td.be{border:2px solid aqua;}
+
+    </style>
+        <table id="be">
+                <tr class="be"><th class="be">head1</th><th class="be">head2</th><th class="be">head3</th><th class="be">head4</th></tr>
+                <tr class="be"><td class="be">11</td><td class="be">12</td><td class="be">13</td><td class="be">14</td></tr>
+                <tr class="be"><td class="be">21</td><td class="be">22</td><td class="be">23</td><td class="be">24</td></tr>
+                <tr class="be"><td class="be">31</td><td class="be">32</td><td class="be">33</td><td class="be">34</td></tr>
+                <tr class="be"><td class="be">41</td><td class="be">42</td><td class="be">43</td><td class="be">44</td></tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>space combine</h2>
+        <p>using rowspan and colspan to combine the space in table.</p>
+        <textarea rows="8" cols="130" disabled>
+<table id="be">
+    <tr class="be"><th class="be">head1</th><th class="be">head2</th><th class="be">head3</th><th class="be">head4</th></tr>
+    <tr class="be"><td class="be" rowspan="2">11</td><td class="be">12</td><td class="be">13</td><td class="be">14</td></tr>
+    <tr class="be"><td class="be">22</td><td class="be">23</td><td class="be">24</td></tr>
+    <tr class="be"><td class="be">31</td><td class="be">32</td><td class="be" colspan="2">33</td></tr>
+    <tr class="be"><td class="be">41</td><td class="be">42</td><td class="be">43</td><td class="be">44</td></tr>
+</table>
+        </textarea><br>
+        demonstrate:
+        <table id="be">
+                <tr class="be"><th class="be">head1</th><th class="be">head2</th><th class="be">head3</th><th class="be">head4</th></tr>
+                <tr class="be"><td class="be" rowspan="2">11</td><td class="be">12</td><td class="be">13</td><td class="be">14</td></tr>
+                <tr class="be"><td class="be">22</td><td class="be">23</td><td class="be">24</td></tr>
+                <tr class="be"><td class="be">31</td><td class="be">32</td><td class="be" colspan="2">33</td></tr>
+                <tr class="be"><td class="be">41</td><td class="be">42</td><td class="be">43</td><td class="be">44</td></tr>
+            </table>
+    </div>
+
+    <div>
+        <h2>caption</h2>
+        <p>representing title of a table.</p>
+        <textarea rows="9" cols="130" disabled>
+<table id="be">
+    <caption>the test demo</caption>
+    <tr class="be"><th class="be">head1</th><th class="be">head2</th><th class="be">head3</th><th class="be">head4</th></tr>
+    <tr class="be"><td class="be" rowspan="2">11</td><td class="be">12</td><td class="be">13</td><td class="be">14</td></tr>
+    <tr class="be"><td class="be">22</td><td class="be">23</td><td class="be">24</td></tr>
+    <tr class="be"><td class="be">31</td><td class="be">32</td><td class="be" colspan="2">33</td></tr>
+    <tr class="be"><td class="be">41</td><td class="be">42</td><td class="be">43</td><td class="be">44</td></tr>
+</table>
+        </textarea><br>
+        demonstrate:
+                <table id="be">
+                    <caption>the test demo</caption>
+                    <tr class="be"><th class="be">head1</th><th class="be">head2</th><th class="be">head3</th><th class="be">head4</th></tr>
+                    <tr class="be"><td class="be" rowspan="2">11</td><td class="be">12</td><td class="be">13</td><td class="be">14</td></tr>
+                    <tr class="be"><td class="be">22</td><td class="be">23</td><td class="be">24</td></tr>
+                    <tr class="be"><td class="be">31</td><td class="be">32</td><td class="be" colspan="2">33</td></tr>
+                    <tr class="be"><td class="be">41</td><td class="be">42</td><td class="be">43</td><td class="be">44</td></tr>
+                </table>
+    </div>
+    
+    <input type="button" value="go back" onclick="location.href='../main.html'"/>
+</body>
+</html>

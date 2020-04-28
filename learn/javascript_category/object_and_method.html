@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="utf-8" />
+    <title>object & method</title>
+</head>
+
+<body>
+    <h2>object & method</h2>
+    <h3>eval</h3>
+    <textarea rows="9" cols="100" disabled>
+<script>
+    //the evaluation based on the string input
+    console.log("eval(\'1+2+3\'): "+eval('1+2+3'));//it can be used on basic calculation
+    console.log("eval(\'2>3\'): "+eval('2>3'));    //on comparison
+    //console.log("eval(\'ABC\'): "+eval('ABC'));  //if the input string can not be calculated,
+                                                   //this function will occur error
+</script>
+    </textarea>
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser
+        <script>
+            //the evaluation based on the string input
+            console.log("eval(\'1+2+3\'): "+eval('1+2+3'));//it can be used on basic calculation
+            console.log("eval(\'2>3\'): "+eval('2>3'));    //on comparison
+            //console.log("eval(\'ABC\'): "+eval('ABC'));    //if the input string can not be calculated,
+                                                            //this function will occur error
+        </script>
+    </div>
+
+    <h3>encode & decode URI and data transformation:</h3>
+    <textarea rows="7" cols="105" disabled>
+<script>
+    console.log("before: ABCDEFG => after encodeURI: "+encodeURI("ABCDEFG"));
+    console.log("before: %E4%B8%AD%E6%96%87 => after decodeURI: "+decodeURI("%E4%B8%AD%E6%96%87"));
+    //encodeURI: encoding a string into URI format.
+    //decodeURI: decoding a URI into normal string.
+</script>
+    </textarea>
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser
+        <script>
+            console.log("before: ABCDEFG => after encodeURI: "+encodeURI("ABCDEFG"));
+            console.log("before: %E4%B8%AD%E6%96%87 => after decodeURI: "+decodeURI("%E4%B8%AD%E6%96%87"));
+            //encodeURI: encoding a string into URI format.
+            //decodeURI: decoding a URI into normal string.
+        </script>
+    </div>
+
+    <h3>String object</h3>
+    <textarea rows="21" cols="120" disabled>
+<script>
+    let str="Hello JavaScript!";// a string object
+
+    console.log("string: str.charAt(6): "+str.charAt(6));
+    //charAt(n):return the character at nth-digit of string.
+    console.log("string: str.charCodeAt(6): "+str.charCodeAt(6));
+    //charCodeAt(n):return the character at nth-digit of string in hexadecimal form.
+
+    console.log("string: str.indexOf('J'): "+str.indexOf("J"));
+    //indexOf('n'): return the first place of the input character(or string).
+    console.log("string: str.lastIndexOf('J'): "+str.lastIndexOf('J'));
+    //lastIndexOf('n'): return the last place if the input character(or string).
+
+    console.log("string: str.substr(6, 4): "+str.substr(6,4));
+    //substr(s[start], n[length]): return a n-length substring start at s digit of the original string.
+    console.log("string: str.substring(6, 9): "+str.substring(6,9));
+    //substring(s[start], e[end]): return a substring start from s-th digit to e-th digit of the original string.
+    console.log("string: str.split(' '): "+str.split(' '));
+    //split(n): return a string array by spliting  the original string using 'n'.
+</script>
+    </textarea> 
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser
+        <script>
+            let str="Hello JavaScript!";                          // a string object
+            console.log("string: str.charAt(6): "+str.charAt(6)); //charAt(n):return the character at nth-digit of string.
+            console.log("string: str.charCodeAt(6): "+str.charCodeAt(6));
+            //charCodeAt(n):return the character at nth-digit of string in hexadecimal form.
+            console.log("string: str.indexOf('J'): "+str.indexOf("J"));
+            //indexOf('n'): return the first place of the input character(or string).
+            console.log("string: str.lastIndexOf('J'): "+str.lastIndexOf('J'));
+            //lastIndexOf('n'): return the last place if the input character(or string).
+            console.log("string: str.substr(6, 4): "+str.substr(6,4));
+            //substr(s[start], n[length]): return a n-length substring start at s digit of the original string.
+            console.log("string: str.substring(6, 9): "+str.substring(6,9));
+            //substring(s[start], e[end]): return a substring start from s-th digit to e-th digit of the original string.
+            console.log("string: str.split(' '): "+str.split(' '));
+            //split(n): return a string array by spliting  the original string using 'n'.
+        </script>
+    </div>
+
+    <h3>Date Object</h3>
+    <textarea rows="47" cols="110" disabled>
+<script>
+        //in javascript, there is an object-Date,uesd for operation with time.
+        //to declare a Date object:
+        //1. new Date()->using this method to declare, the time of the Date will be set to current time.
+        let d1 = new Date();
+        console.log("new Date(): "+d1);
+        
+        //2. new Date(millisecond)->count from 1/1/1970
+        let d2 = new Date(1000*60*60*24);
+        console.log("new Date(millisecond): "+d2);
+        
+        //3-1.new Date(specific time in format)
+        let d3 = new Date("2020/4/6/ 9:00:00");
+        console.log("new Date(specific time in format): "+d3);
+        
+        //3-2.new Date(specific time in number[year month date hour minute second])
+        let d4 = new Date(2020,4,6,9,0,0);
+        console.log("new Date(specific time in number[year month date hour minute second]): "+d4);
+        
+        //function of Date object:
+        let d5 = new Date();
+        console.log("the function result of Date:");
+        console.log("getFullYear: "+d5.getFullYear());
+        console.log("getMonth: "+d5.getMonth());
+        console.log("getDate: "+d5.getDate());
+        console.log("getDay: "+d5.getDay());
+        console.log("getHours: "+d5.getHours());
+        console.log("getMinutes: "+d5.getMinutes());
+        console.log("getSeconds: "+d5.getSeconds());
+        console.log("getTime: "+d5.getTime());
+        //getFullYear():return the year of west.
+        //getMonth():return the month.(0~11)
+        //getDate():return the date.(1~31)
+        //getDay():return the day.(0~6)
+        //getHour():return the hour.(0~23)
+        //getMinutes():return the minutes.(0~59)
+        //getSeconds():return the seconds.(0~59)
+        //getTime():return the milliseconds from 1970/1/1 until now.
+        
+        //calculation:(using millisecond)
+        //yesterday= today - 1 day
+        let d6 = new Date();//current time
+        console.log("yesterday= "+ Date(d6.getTime()-24*60*60*1000));
+        //24(hours)*60(minutes)*60(seconds)*1000(milliseconds)=1 day
+        //all the Date calculation using milliseconds to calculate
+</script>
+    </textarea>
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser
+        <script>
+            //in javascript, there is an object-Date,uesd for operation with time.
+            //to declare a Date object:
+            //1. new Date()->using this method to declare, the time of the Date will be set to current time.
+            let d1 = new Date();
+            console.log("new Date(): "+d1);
+        
+            //2. new Date(millisecond)->count from 1/1/1970
+            let d2 = new Date(1000*60*60*24);
+            console.log("new Date(millisecond): "+d2);
+        
+            //3-1.new Date(specific time in format)
+            let d3 = new Date("2020/4/6/ 9:00:00");
+            console.log("new Date(specific time in format): "+d3);
+        
+            //3-2.new Date(specific time in number[year month date hour minute second])
+            let d4 = new Date(2020,4,6,9,0,0);
+            console.log("new Date(specific time in number[year month date hour minute second]): "+d4);
+        
+            //function of Date object:
+            let d5 = new Date();
+            console.log("the function result of Date:");
+            console.log("getFullYear: "+d5.getFullYear());
+            console.log("getMonth: "+d5.getMonth());
+            console.log("getDate: "+d5.getDate());
+            console.log("getDay: "+d5.getDay());
+            console.log("getHours: "+d5.getHours());
+            console.log("getMinutes: "+d5.getMinutes());
+            console.log("getSeconds: "+d5.getSeconds());
+            console.log("getTime: "+d5.getTime());
+            //getFullYear():return the year of west.
+            //getMonth():return the month.(0~11)
+            //getDate():return the date.(1~31)
+            //getDay():return the day.(0~6)
+            //getHour():return the hour.(0~23)
+            //getMinutes():return the minutes.(0~59)
+            //getSeconds():return the seconds.(0~59)
+            //getTime():return the milliseconds from 1970/1/1 until now.
+        
+            //calculation:(using millisecond)
+            //yesterday= today - 1 day
+            let d6 = new Date();//current time
+            console.log("yesterday= "+ Date(d6.getTime()-24*60*60*1000));
+            //24(hours)*60(minutes)*60(seconds)*1000(milliseconds)=1 day
+            //all the Date calculation using milliseconds to calculate
+        </script>
+    </div>
+    <h3>Array Object</h3>
+    <textarea rows="28" cols="100" disabled>
+<script>
+    //array: a set of objects or data.
+    //in javaScript: {}->object []->array
+
+    //to declare an array:
+    //1. declare a empty array and then assign the value.
+    let arr1=new Array();
+    arr1[0]="a";
+    arr1[1]="b";
+    arr1[2]="c";
+    arr1[3]="d";
+
+    //2. declare and assign the value at the same time.
+    let arr2= new Array(1, 2, 3, 4);
+
+    //3. literal array declaration:
+    let arr3=[1, "a", 3, "d", t={"name":"e", "order":5}, [6,7,8]];
+
+    //the elements of an array can be either basic data type or object, even another array.
+
+    //to print out array:
+    //1.directly print.
+    console.log(arr1);
+
+    //2.using loop:
+    arr2.forEach(element => console.log(element));
+</script>
+    </textarea>
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser
+        <script>
+            //array: a set of objects or data.
+            //in javaScript: {}->object []->array
+        
+            //to declare an array:
+            //1. declare a empty array and then assign the value.
+            let arr1=new Array();
+            arr1[0]="a";
+            arr1[1]="b";
+            arr1[2]="c";
+            arr1[3]="d";
+        
+            //2. declare and assign the value at the same time.
+            let arr2= new Array(1, 2, 3, 4);
+        
+            //3. literal array declaration:
+            let arr3=[1, "a", 3, "d", t={"name":"e", "order":5}, [6,7,8]];
+        
+            //the elements of an array can be either basic data type or object, even another array.
+        
+            //to print out array:
+            //1.directly print.
+            console.log(arr1);
+        
+            //2.using loop.
+            arr2.forEach(element => console.log(element));
+        </script>
+    </div>
+    <input type="button" value="go back" onclick="location.href='../javascript_main.html'">
+</body>
+</html>

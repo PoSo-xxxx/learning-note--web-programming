@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="utf-8" />
+    <title>Variable and Declaration</title>
+</head>
+
+<body>
+    <h2>variables</h2>
+    <p>there are three kinds of variable declarations:</p>
+    <ul>
+        <li>var:the basic declaration, but easily causing many problems, using "let" or "const' instead.</li>
+        <li>let:the declaration used for declare a changable variable.</li>
+        <li>const: the declarartion userd for declare a unchanged variable.</li>
+    </ul>
+    <h3>var declaration:</h3>
+    <textarea rows="17" cols="100" disabled>
+<script>
+	//there are three ways to declare a "var" declaration:
+
+	//1.declare a variable using "var", then assign value later.
+	var ini1;
+	ini1 = 10;
+
+	//2.declare and assign value at the same time.
+	var ini2 = 20;
+
+	//3.directly assign a value to a variable.
+	ini3 = 30;
+
+	//output the declaration result in console
+	console.log(ini1, ini2, ini3);
+</script>
+		</textarea>
+    <div>
+        demonstrate:<br> press "F12" to open the console of the browser
+        <script>
+            //there are three ways to declare a "var" declaration:
+
+            //1.declare a variable using "var", then assign value later.
+            var ini1;
+            ini1 = 10;
+
+            //2.declare and assign value at the same time.
+            var ini2 = 20;
+
+            //3.directly assign a value to a variable.
+            ini3 = 30;
+
+            //output the declaration result in console.
+            console.log(ini1, ini2, ini3);
+        </script>
+    </div>
+
+    <h3>let and const declaration:</h3>
+    <textarea rows="14" cols="100" disabled>
+<script>
+	//let declaration is used when the value of variable will be changed.
+	let ini4 = 20;		//just like the first method of var declaration,
+	ini4 = 40;		//declare then assign the value.
+
+	//const declaration often used for unchaged value of declaration.
+	const ini5 = 50;    //need to assign value when declaring a const variable
+	//ini5 = 70;        //this will become error, because const variable can
+			    //not be resigned a value.
+	
+	//output the declaration result in console.
+	console.log(ini4, ini5);
+</script>
+	</textarea>
+    <div>
+        demonstrate:<br> press "F12" to open the console of the browser
+        <script>
+            //let declaration is used when the value of variable will be changed.
+            let ini4 = 20; //just like the first method of var declaration,
+            ini4 = 40; //declare then assign the value.
+
+            //const declaration often used for unchaged value of declaration.
+            const ini5 = 50; //need to assign value when declaring a const variable
+            //ini5 = 70; //this will become error, because const variable can
+            //not resign a value.
+
+            //output the declaration result in console.
+            console.log(ini4, ini5);
+        </script>
+    </div>
+    <h3>the type of variable</h3>
+    <textarea rows="17" cols="100" disabled>
+<script>
+	//the type of variable is depand on
+	//what kind of value the variable being assigned.
+	//for example:
+
+	let t1="test";  //this is a string variable.
+	let t2=true;    //this is a boolean variable.
+	let t3=1.1;     //this is a number variable.
+	let t4=1;       //this is also a number variable.
+	let t5=null;    //null is also a data type of variable.
+	let t6;         //when no value is assigned to a variable,
+	                //this will become undefined. 
+
+	//typeof: the function for checking the type of variable.
+	console.log(typeof t1, typeof t2, typeof t3, typeof t4, typeof t5, typeof t6);
+</script>
+	</textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser.
+        <script>
+            //the type of variable is depand on
+            //what kind of value the variable being assigned.
+            //for example:
+
+            let t1 = "test"; //this is a string variable.
+            let t2 = true; //this is a boolean variable.
+            let t3 = 1.1; //this is a number variable.
+            let t4 = 1; //this is also a number variable.
+            let t5 = null; //null is also a data type of variable.
+            let t6; //when no value is assigned to a variable,
+            //this will become undefined. 
+
+            //typeof: the function for checking the type of variable.
+            console.log(typeof t1, typeof t2, typeof t3, typeof t4, typeof t5, typeof t6);
+        </script>
+    </div>
+
+    <h3>object and method</h3>
+    <textarea rows="20" cols="100" disabled>
+<script>
+	//to construct a object, there are two ways:
+
+	//1. declare it directly without assigning anything,
+	ob1 = new Object();
+	//then define its attributes or methods.
+	ob1.first="first";//this two are the attributes of the object.
+	ob1.second=2;
+
+	//2. declare and assign the attributes or methods.
+	ob2 = 
+	{
+		first: "first",
+		second: 2
+	};
+
+	//output the declaration of these tow objects in the console.
+	console.log(ob1, ob2);
+</script>
+	</textarea>
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser.
+        <script>
+            //to construct a object, there are two ways:
+
+            //1. declare it directly without assigning anything,
+            ob1 = new Object();
+            //then define its attributes or methods.
+            ob1.first = "first"; //this two are the attributes of the object.
+            ob1.second = 2;
+
+            //2. declare and assign the attributes or methods.
+            ob2 = {
+                first: "first",
+                second: 2
+            };
+
+            //output the declaration of these tow objects in the console.
+            console.log(ob1, ob2);
+        </script>
+    </div>
+    <h3>type transfer</h3>
+    <textarea rows="17" cols="100" disabled>
+<script>
+    //when changing the data type of the value
+    //usually thansfer string into number.
+
+    //parseInt:turn string into number.
+    console.log(parseInt("33P"));
+    console.log(parseInt("12.522"));
+    console.log(parseInt("P33"));
+
+    //parseInt:turn string into floating number.
+    console.log(parseFloat("5.22A22"));
+    console.log(parseFloat("P5.22A22"));
+
+    //these function will work until meeting the first digit that is not number.
+    //if the first digit is character, then it will return NaN.
+</script>
+	</textarea>
+    <div>
+        demonstrate:<br>press "F12" to open the console of the browser.
+        <script>
+            //when changing the data type of the value
+            //usually thansfer string into number.
+
+            //parseInt:turn string into number.
+            console.log(parseInt("33P"));
+            console.log(parseInt("12.522"));
+            console.log(parseInt("P33"));
+
+            //parseInt:turn string into floating number.
+            console.log(parseFloat("5.22A22"));
+            console.log(parseFloat("P5.22A22"));
+
+            //these function will work until meeting the first digit that is not number.
+            //if the first digit is character, then it will return NaN.
+        </script>
+    </div>
+    <br><input type="button" value="go back" onclick="location.href='../javascript_main.html'">
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+<head>
+	<title>input</title>
+	<link rel="stylesheet"href="../learning.css">
+	<meta charset="UTF-8">
+    <meta name="application-name" content="input introduction">
+    <meta name="description" content="this website is for web language learning">
+    <meta name="keyword" content="html, css, javascript">
+    <meta name="author" content="Power Teng">
+    <meta name="generator" content="visual studio code">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>input</h1>
+    <p>the format of data input in a web site, having many type of input format.</p>
+    <div>
+        <textarea rows="32" cols="130" disabled>
+<form action="#" method="get" enctype="multipart/form-data">
+    <fieldset>
+        <legend>個人資料<em>(必填)</em></legend>
+            <div>
+                <label>姓名:</label><input type="text" palceholder="guest" size="10">
+                <label>密碼:</label><input type="password" maxlength="6" required><br>
+                <label>性別:</label>
+                <input type="radio"checked="checked">男
+                <input type="radio">女<br>
+                <label>縣市:</label>
+                <select name="addr1" multiple="multiple">
+                <option value="1">台北市</option>
+                <option value="2" selected="selected">新北市</option>
+                <option value="3">桃園市</option>
+                <option value="4">新竹市</option>
+                </select><br>
+                <label>興趣:</label>
+                <input type="checkbox" value="music">音樂
+                <input type="checkbox" value="sport" checked="checked">運動
+                <input type="checkbox" value="reading">閱讀
+                <input type="checkbox" value="movie">電影<br>
+                <label>照片:</label><input type="file" multiple="multiple"><br>
+                <label>意見:</label><textarea rows="5" cols="20">please input ...<textarea><br>
+                <input type="submit" value="submit"/>
+                <input type="reset" value="reset"/>
+            </div>
+    </fieldset>
+</form>
+        </textarea><br>
+        <p class="warning">there is a set of textarea but without "/",because it will make an error occurs</p><br>
+        demonstrate:
+        <form action="#" method="get" enctype="multipart/form-data">
+            <fieldset>
+                <legend>個人資料<em>(必填)</em></legend>
+                    <div>
+                        <label>姓名:</label><input type="text" placeholder="guest" size="10">
+                        <label>密碼:</label><input type="password" maxlength="6" required><br>
+                        <label>性別:</label>
+                        <input type="radio"checked="checked">男
+                        <input type="radio">女<br>
+                        <label>縣市:</label>
+                        <select name="addr1" multiple="multiple">
+                        <option value="1">台北市</option>
+                        <option value="2" selected="selected">新北市</option>
+                        <option value="3">桃園市</option>
+                        <option value="4">新竹市</option>
+                        </select><br>
+                        <label>興趣:</label>
+                        <input type="checkbox" value="music">音樂
+                        <input type="checkbox" value="sport" checked="checked">運動
+                        <input type="checkbox" value="reading">閱讀
+                        <input type="checkbox" value="movie">電影<br>
+                        <label>照片:</label><input type="file" multiple="multiple"><br>
+                        <label>意見:</label><textarea rows="5" cols="20">please input ...</textarea><br>
+                        <label>重新整理:</label><input type="button" value="refresh" onclick="location.href='input.html'"/>
+                        <input type="submit" value="submit"/>
+                        <input type="reset" value="reset"/>
+                    </div>
+            </fieldset>
+        </form>
+        <h2>attrubute:</h2>
+        <ul>
+            <li>type:define the input format.</li>
+                <ul>
+                    <li>text: a textbox for inputting the text data.</li>
+                    <li>password:also a textbox for text input, but it will hide the input text.</li>
+                    <li>radio:a circle icon for clicking. if there are multiple radio icon, it can only click one.</li>
+                    <li>checkbox:a square icon for clicking, it can be clicked for multiple option.</li>
+                    <li>file:a input format for uploading the file from local to internet.</li>
+                    <li>button:a button for click, it can be used on many usages.</li>
+                    <li>submit:a button, activate it will send the whole data in the form to the action web or application.</li>
+                    <li>reset:a button, activate it will reset all input to the default.</li>
+                </ul>
+            <li>value:</li>
+                <ul>
+                    <li>when using on text, password:the default input.</li>
+                    <li>when using on option, checkbox:the value of the choices.</li>
+                    <li>when using on button-like object:the value showing on a button.</li>
+                </ul>
+            <li>placeholder:a default or an example of input, different from the value in text, it won't be a real input.</li>
+            <li>checked: set a redio or checkbox to activated.</li>
+            <li>size:a lenght of a textbox.</li>
+            <li>mexlength:the maximum input of a textbox.</li>
+            <li>disabled:set a input being disabled for user.</li>
+        </ul>
+
+        <h2>select:</h2>
+        <p>a drop-down menu with defined option.</p>
+        <ul>
+            <li>option:the choice in a select tag.</li>
+            <li>multiple:specifies that multiple choice can be choosen at once.</li>
+            <li>selected:set an option being choosen.</li>
+        </ul>
+        <h2>textarea:</h2>
+        <p>a block for paragraph input.</p>
+        <ul>
+            <li>width:the width of textarea.</li>
+            <li>height: the height of textarea.</li>
+        </ul>
+    <label>check the form tag</label><input type="button" value="form" onclick="location.href='formhtml'"/><br>
+    <label>check the fieldset tag</label><input type="button" value="fieldset" onclick="location.href='fieldset.html'"/><br>
+    <label>check the legend tag</label><input type="button" value="legend" onclick="location.href='legend.html'"/><br>
+    <label>check the label tag</label><input type="button" value="label" onclick="location.href='label.html'"/>
+    </div>
+    <input type="button" value="go back" onclick="location.href='../main.html'"/>
+</body>
+</html>

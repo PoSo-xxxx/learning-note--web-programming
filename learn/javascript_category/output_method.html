@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="utf-8" />
+    <title>output method</title>
+</head>
+
+<body>
+    <h2>output method</h2>
+    <h3>output</h3>
+    <p>there two three ways to output the javascript result:</p>
+    <textarea rows="24" cols="100" disabled>
+<!-- the output demo button, each representing one output method-->
+<input type="button" onclick="alert_output();" value="alert window"/>
+<input type="button" onclick="console_output();" value="console log"/>
+<input type="button" onclick="document_output();" value="document write"/>
+
+<script>
+    function alert_output()
+    {
+        alert("the alert window output");
+        //window.alert only accept one argument and only have one output
+    }
+    function console_output()
+    {
+        console.log("the console log output");
+        //console.log:using developer tool to see the result.(F12 or Ctrl+Shift+I)
+
+    }
+    function document_output()
+    {
+        document.write("<p>the document write output</p>");
+        //directly output a html format output in the web page.
+    }
+</script>
+        </textarea>
+    <div>
+        demonstrate:<br>
+        <!-- the output demo button -->
+        <input type="button" onclick="alert_output();" value="alert window" />
+        <input type="button" onclick="console_output();" value="console log" />
+        <input type="button" onclick="document_output();" value="document write" />
+
+        <script>
+            function alert_output() {
+                alert("the alert window output");
+                //window.alert only accept one argument and only have one output
+            }
+
+            function console_output() {
+                console.log("the console log output");
+                //console.log:using developer tool to see the result.(F12 or Ctrl+Shift+I)
+            }
+
+            function document_output() {
+                document.write("<p>the document write output, to go back please reload the page(press \"F5\")</p>");
+                //directly output a html format output in the web page.
+            }
+        </script>
+    </div>
+    <h3>format output</h3>
+    <p>output the result in a formal way</p>
+    <textarea rows="9" cols="100" disabled>
+<script>
+    //output in a format:
+    let a=1, b=2, c=3;
+    console.log("forma toutput:"+"a="+a+" b="+b+" c="+c);
+    //what we usually do when output the result in a format.
+    console.log("forma toutput:"+`a=${a} b=${b} c=${c}`);
+    //a build-in template literals of javascript.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser
+        <script>
+            //output in a format:
+            let a = 1,
+                b = 2,
+                c = 3;
+            console.log("forma toutput:" + "a=" + a + " b=" + b + " c=" + c);
+            //what we usually do when output the result in a format.
+            console.log("forma toutput:" + `a=${a} b=${b} c=${c}`);
+            //a build-in template literals of javascript.
+        </script>
+    </div>
+    <h3>escape character</h3>
+    <p>the escape characters in javascript</p>
+    <textarea rows="8" cols="100" disalbed>
+<script>
+    /* \0:null            \b:backspace       \t:horizontal tab
+       \n:newline         \v:vertical tab    \f:next page
+       \r:carriage return \":double quote    \':single quote
+       \\:backslash       \xXX:two digits' hexadecimal
+       \uXXXX:unicode output in hexadecimal */
+</script>
+    </textarea>
+    <div>
+        currently on demonstrate
+    </div>
+    <br><input type="button" value="go back" onclick="location.href='../javascript_main.html'">
+</body>
+
+</html>

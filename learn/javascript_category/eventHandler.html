@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01eventHandler.html</title> 
+    <script>
+        //****************************************************** 
+        //  load事件-- 需要等待圖檔、樣式表等資源載入结束才會觸發        
+        //******************************************************
+        function f1(){alert("method 1");}
+        function f2() {alert("method 2");}
+        function f3() {alert("method 3");}
+
+        function init()
+        {
+            document.getElementById("m2").onclick=f2;  //函式宣告
+            document.getElementById("m2").onclick =function(){alert("method 2x");};  //函式字面值
+            
+            //document.getElement~~.event: javascript event handle process. 
+            //using javascript eventhandler:if a event trigger two same eventhandler, 
+            //new event handler will overwrite the old one.(the which declare first, which will be overwrite)
+            //As result, this will only output "method 2x".
+
+            document.getElementById("m3").addEventListener("click",f3,false);
+            document.getElementById("m3").addEventListener("click",function(){alert("method 3x");}, false);
+            
+            //document.getElement~~.addEventListener: DOM event handle process.
+            //using DOM eventhandler:if a event trigger two same eventhandler,
+            //the DOM eventhandler won't overwrite the each other.
+            //so both of process will be execute.
+        }
+
+        window.onload = init;
+        //window.onload:window means the html file itself, 
+        //onload event means when the html is being load.
+
+        //getelementBy~~():function used for getting data from html tag.
+    </script>
+</head>
+
+
+<!-- 1.先載入body元素內容(html文件、css樣式、圖檔) , 2.再載入init() -->
+<body onload="init();">
+    <!-- HTML屬性事件處理程序 -->
+    <h1 onclick="f1();">method 1</h1>
+    <!-- using only html calling the function to handle the event. -->
+    <!--using html to handle event will have some problem, that is, the process between every different browser.-->
+
+    <!-- JavaScript屬性事件處理程序 -->
+    <h1 id="m2">method 2</h1>
+    <!-- handle the event in script -->
+
+    <!-- W3C DOM 處理程序 -->
+    <h1 id="m3">method 3</h1>
+    <!-- define by W3C, a another method to handle the event -->
+
+
+    <img id="idimg" src="Images/star.gif" />
+
+    <script>       
+        document.getElementById("idimg").onmouseover = mouseover;  //事件繫結，滑鼠滑入
+        document.getElementById("idimg").onmouseout = mouseout;    //事件繫結，滑鼠滑出
+        //onmouseover:when mouse move on the object, it will trigger.
+        //onmouseout: when mouse leave the object, it will be trigger.
+
+        function mouseover()
+        {
+            this.src="Images/chngstar.gif";
+        }
+
+        function mouseout()
+        {
+            document.getElementById("idimg").src="Images/star.gif";
+        }
+    </script>
+
+    name:
+    <input type="text" id="idName" /><br />
+    password:
+    <input type="password" id="idPwd" /><hr />
+    縣市:
+    <select id="idaddr">
+        <option value="1" selected>台北市</option>
+        <option value="2">新北市</option>
+        <option value="3">桃園市</option>
+    </select>
+
+    <script>
+        document.getElementById("idName").onblur = blur;  //事件繫結，焦點離開
+        document.getElementById("idName").onfocus = focus;  //事件繫結，取得焦點
+        document.getElementById("idPwd").onblur = blur;  //事件繫結，焦點離開
+        document.getElementById("idPwd").onfocus = focus;  //事件繫結，取得焦點
+        document.getElementById("idaddr").onchange = change;  //事件繫結，改變內容
+        //blur:when focus leave the object will trigger the blur.
+        //focus:when user select and focus on object, it will be trigger.
+
+        //css->background-color ,JS->backgroundColor
+        function blur()
+        {
+        // document.getElementById("idName").style.backgroundColor="pink";
+        this.style.backgroundColor="pink";
+        }
+
+        function focus()
+        {
+        // document.getElementById("idName").style.backgroundColor="yellow";
+        this.style.backgroundColor="yellow";
+        }
+   
+        function change()
+        {
+        // alert(document.getElementById("idaddr").value);
+        alert(this.value);
+        }
+    </script>
+
+    
+</body>
+</html>

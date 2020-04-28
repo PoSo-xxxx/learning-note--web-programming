@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>02DOM2.html</title>
+	</head>
+
+	<body>
+		<div id="iddiv">div</div>
+		<input type="button" value="CreateElement" id="idCEle" >
+		<input type="button" value="RemoteElement" id="idREle" >
+
+        <script>
+            document.getElementById("idCEle").onclick=CreateElement;
+            document.getElementById("idREle").onclick=RemoveElement;
+            function RemoveElement(){
+                let theNode=document.getElementById("idImg");
+                // theNode.parentNode.removeChild(theNode);
+                theNode.remove();
+            }
+            function CreateElement() {
+                let theDIV = document.getElementById("iddiv");  //取得div物件
+
+                let eleP = document.createElement("p");  //<p></p>
+                let txtP = document.createTextNode("Hello World");  //Hello World
+                eleP.appendChild(txtP); //<p>Hello World</p>
+
+                theDIV.appendChild(eleP);  //<div id="iddiv">div<p>Hello World</p></div>
+
+                let eleImg = document.createElement("img");  //<img>
+                eleImg.setAttribute("src", "DOM/DOMImage/rabbit-hat.gif");  //<img src...
+                eleImg.setAttribute("id","idImg");
+
+                theDIV.appendChild(eleImg);//<div id="iddiv">div<p>Hello World</p><img src...></div>
+            }
+
+            //DOM(Document Object Model)
+            //the html tree:
+            //                          document                      -->document node
+            //                             ||
+            //             ---------------html---------------         -->element node
+            //             |                                |
+            //           head                       -------body-------
+            //             |                        |                |
+            //           title                     h1                p
+            //             |                        |                |
+            //           text1                    text2            text3    -->text node
+            //
+            //
+            //node relation:     firstChild                              lastChild
+            //                      ---------------parent Node---------------
+            //                      ||                  ||                 ||
+            //                      ||                  ||                 ||
+            //                      || previousSibling  ||    nextSibing   ||
+            //                    node1      <---      node2     --->     node3
+            //                childNodes[0]        childNodes[1]      childNodes[2]
+            //
+            //attributes:
+            //nodeType: type of node.
+            //nodeName:uppercase name or #document or #text.
+            //nodeValue:the content of node or null.
+            //
+            //warning:documentElement==HTML
+            //warning:the space between tags is also a node. 
+            //
+            //getElement:
+            //there are four type of get method:
+            //getElementById():select specific id element.
+            //getElementsByName():select specific name elements.
+            //getElementsByTagName():select specific tag elements.
+            //getElementByClassName():select specific class elements.
+            //
+            //to add a new node:
+            //1.first  let variable1 = document.createElement("tag");
+            //2.then let variable2 = document.createTextNode("content");
+            //and then append them together:
+            //     variable1.append(variable2);
+            //     childNode.append(variable1);
+            //
+            //to remove a node:
+            //1.find the node you want to remove.
+            //  let a variable = document.getElementBy...("node_to_remove");
+            //2. use node_to_remove.parentNode.removeChild(node_to_remove).
+            //   or use node_to_remove.remove();
+            //
+            //attirbute customize:
+            //for example: let variable = document.get....(node);
+            //
+            //node.setAttribute("attribute","value"): to add new attributes.
+            //node.removeAttribute("attribute"):remove the chosen attribute.
+            //node.getAttribute("attribute"):get the value of selected attribute.
+
+        </script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+<head>
+	<title>iframe</title>
+	<link rel="stylesheet"href="../learning.css">
+	<meta charset="UTF-8">
+    <meta name="application-name" content="web programming introduction">
+    <meta name="description" content="this website is for web language learning">
+    <meta name="keyword" content="html, css, javascript">
+    <meta name="author" content="Power Teng">
+    <meta name="generator" content="visual studio code">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>iframe</h1>
+    <p>define an embedding window in a web page.</p>
+    <div>
+        <textarea rows="3" cols="130" disabled>
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/eVKBP_X8io8?list=UUjfTdJnuxGAwfc0ITg6Et9w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </textarea><br>
+        demonstrate:<br>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/eVKBP_X8io8?list=UUjfTdJnuxGAwfc0ITg6Et9w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <ul>
+            <li>width:the width of embedding window.</li>
+            <li>height:the height of embedding window.</li>
+            <li>src: the resource of embedding window.</li>
+            <li>frameborder:specifies whether window has a border or not.("0"->off "1"->on)</li>
+            <li>allow: imformation about policy and privacy.</li>
+            <li>allowfullscreen: allow to look embedding video or web in fullscreen.</li>
+        </ul>
+    </div>
+    <input type="button" value="go back" onclick="location.href='main.html'"/>
+</body>

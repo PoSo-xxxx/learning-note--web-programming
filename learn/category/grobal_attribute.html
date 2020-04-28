@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <title>grobal attributes</title>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="UTF-8">
+    <meta name="application-name" content="grobal attributes introduction">
+    <meta name="description" content="this website is for web language learning">
+    <meta name="keyword" content="html, css, javascript">
+    <meta name="author" content="Power Teng">
+    <meta name="generator" content="visual studio code">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>grobal attributes:</h2>
+    <p>the following attributes are supported by most of tag in html, having different usage for changing the properties of tag.</p>
+
+    <h3>title:</h3>
+    <p>when mouse move over an element with attribute title, it will show a tooltip of element.</p>
+    <textarea rows="3" cols="100" disabled>
+            <p><abbr>class="H" title="Fist In First Out">FIFO</abbr> is a machanic of computer.</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p><abbr class="H" title="Fist In First Out">FIFO</abbr> is a machanic of computer.</p>
+    </div>
+
+    <h3>class:</h3>
+    <p>specifies one or more class names for a element, making element to have the same properties and method as class definition.</p>
+    <textarea rows="5" cols="100" disabled>
+        <style>
+            .test{text-decoration: line-through}
+        </style>
+        <p class="test">this is a demonstration of class.</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <style>
+            .test {
+                text-decoration: line-through
+            }
+        </style>
+        <p class="test">this is a demonstration of class.</p>
+    </div>
+    <p class="warning">when declare a class in style or css:".class_name"</p>
+
+    <h3>id</h3>
+    <p>specifies a id for a element, makeing element to have the same properties and method as id definition.</p>
+    <textarea rows="5" cols="100" disabled>
+        <style>
+            #practice{text-decoration: solid}
+        </style>
+        <p id="practice">this is a demonstration of id.</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <style>
+            #practice {
+                text-decoration: overline
+            }
+        </style>
+        <p id="practice">this is a demonstration of id.</p>
+    </div>
+    <p class="warning">when declare a id in style or css"#id_name"</p>
+
+    <h3>style:</h3>
+    <p>inline CSS style for an element, used for CSS customization.</p>
+    <textarea rows="2" cols="100" disabled>
+        <p style="font-weight: 900;color:greenyellow;font-size: xx-large">testing style</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p style="font-weight: 900;color:greenyellow;font-size: xx-large">testing style</p>
+    </div>
+    <p class="warning">style can be used as a tag in an html.</p>
+    <p>id, class and style have more usages in CSS, check out CSS for more imformation.</p>
+
+    <h3>accesskey:</h3>
+    <p>setting hot key for web or hyperlink.</p>
+    <textarea rows="3" cols="100" disabled>
+        <a href="https://www.w3schools.com/tags/att_global_accesskey.asp" accesskey="g">
+            go learning(pressing [Alt]+[g])</a>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <a href="https://www.w3schools.com/tags/att_global_accesskey.asp" accesskey="g">go learning(pressing [Alt]+[g])</a>
+    </div>
+    <p class="warning">the usages are different depand on the browser we use:</p>
+    <table>
+        <tr>
+            <td>[Alt]+[accesskey]:</td>
+            <td>Chrome, Edge, IE, Opera</td>
+        </tr>
+        <tr>
+            <td>[Alt]+[Shift]+[accesskey]:</td>
+            <td>firefox</td>
+        </tr>
+    </table>
+
+    <h3>contenteditable:</h3>
+    <p>deciding the content of tag can be edited or not, the default is false.</p>
+    <textarea row="3" cols="100" disabled>
+        <p contenteditable=true>this content can be changed.</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p contenteditable=true>this content can be changed.</p>
+    </div>
+
+    <h3>data-*</h3>
+    <p>the customize attribute for tag, storing data without server-side calling or queries.</p>
+    <textarea rows="14" cols="100" disabled>
+        <ul>
+            <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+            <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>  
+            <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>  
+        </ul>
+        <script>
+            function showDetails(animal)
+            {
+                var animalType = animal.getAttribute("data-animal-type");
+                alert("The " + animal.innerHTML + " is a " + animalType + ".");
+            }
+        </script>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <ul>
+            <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+            <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+            <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+        </ul>
+        <script>
+            function showDetails(animal) {
+                var animalType = animal.getAttribute("data-animal-type");
+                alert("The " + animal.innerHTML + " is a " + animalType + ".");
+            }
+        </script>
+    </div>
+
+    <h3>drag related attributes</h3>
+    <p>several tag are related to drag event, including ondrag, ondragover, ondragstart and draggable.</p>
+    <textarea rows="16" cols="100" disabled>
+        <srcipt>
+            function allowDrop(event){event.preventDefault();}
+            function drag(event){event.dataTransfer.setData("text", event.target.id);}
+            function drop(event)
+            {
+                event.preventDefault();
+                var data = event.dataTransfer.getData("text");
+                event.target.appendChild(document.getElementById(data));
+            }
+        </srcipt>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="images/chngstar.gif" draggable=true ondragstart="drag(event)" id="img1" width="30" heigth="30">
+        </div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <script>
+            function allowDrop(event) {
+                event.preventDefault();
+            }
+
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+
+            function drop(event) {
+                event.preventDefault();
+                var data = event.dataTransfer.getData("text");
+                event.target.appendChild(document.getElementById(data));
+            }
+        </script>
+    </div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="images/chngstar.gif" draggable=true ondragstart="drag(event)" id="img1" width="30" heigth="30">
+    </div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br><br><br><br>
+    <h3>hidden</h3>
+    <p>hiding the tags that only can be seen in backgraound of the server, usually used for sending message and data.</p>
+    <textarea rows="3" cols="100" disabled>
+        <p hidden> you can't see me</p><br>
+        <p>now you see me</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p hidden> you can't see me</p><br>
+        <p>now you see me</p>
+    </div>
+
+    <h3>lang</h3>
+    <p>setting the language of the content.</p>
+    <textarea rows="5" cols="100" disabled>
+        <p lang="zw">這是中文</p>
+        <p lang="en">this is english</p>
+        <p lang="ja">こちらは日本語です</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p lang="zw">這是中文</p>
+        <p lang="en">this is english</p>
+        <p lang="ja">こちらは日本語です</p>
+    </div>
+
+    <h3>spellcheck</h3>
+    <p>check the spelling of the content.</p>
+    <textarea rows="3" cols="100" disabled>
+        <p contenteditable=true spellcheck=true>sometthing worng here, fix it out</p>
+        <input type="text" spellceck=true>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p contenteditable=true spellcheck=true>sometthing worng here, fix it out</p>
+        <input type="text" spellceck=true>
+    </div>
+    <p class="warning">this attribute can be applied on the following tags:</p>
+    <ul>
+        <li>the tags are editable.</li>
+        <li>text type input tegs, except password</li>
+        <li>textarea</li>
+    </ul><br>
+
+    <h3>tabindex</h3>
+    <p>decide the order selection when pressing [tab].</p>
+    <textarea rows="5" cols="100" disabled>
+        <p tabindex="4">try</p>
+        <p tabindex="2">to</p>
+        <p tabindex="3">press</p>
+        <p tabindex="1">tab</p>
+    </textarea>
+    <div>
+        demonstrate:<br>
+        <p tabindex="4">try</p>
+        <p tabindex="2">to</p>
+        <p tabindex="3">press</p>
+        <p tabindex="1">tab</p>
+    </div>
+
+    <h3></h3>
+    <br><input type="button" value="go back" onclick="location.href='../main.html'" />
+</body>
+
+</html>

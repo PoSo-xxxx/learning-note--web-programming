@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+<head>
+	<title>learning html</title>
+	<link rel="stylesheet"href="../learning.css">
+	<meta charset="UTF-8">
+    <meta name="application-name" content="form introduction">
+    <meta name="description" content="this website is for web language learning">
+    <meta name="keyword" content="html, css, javascript">
+    <meta name="author" content="Power Teng">
+    <meta name="generator" content="visual studio code">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>form</h1>
+    <p>define a form in web page, for data insertion.</p>
+    <div>
+    <textarea rows="8" cols="100" disabled>
+<form>
+    <fieldset>
+        <legend>test form</legend>
+        <label>name:</label><input type="text"/>
+        <label>birthday:</label><input type="date"/>
+    </fieldset>
+</form>
+    </textarea><br>
+    demonstate:
+    <form>
+        <fieldset>
+            <legend>test form</legend>
+            <label>name:</label><input type="text"/>
+            <label>birthday:</label><input type="date"/>
+        </fieldset>
+    </form>
+    <h2>attribute:</h2>
+    <ul>
+        <li>action:define where or which application to receive the data from form.</li>
+        <li>method:the method how we send the data, "get" or "post".</li>
+        <li>enctype:how the data being encoded when submitting.</li>
+            <ul>
+                <li>application/x-www-form-urlencoded</li>
+                <li>multipart/form-data</li>
+                <li>text/plain</li>
+            </ul>
+    </ul>
+    <label>check the fieldset tag</label><input type="button" value="fieldset" onclick="location.href='fieldset.html'"/><br>
+    <label>check the input tag</label><input type="button" value="input" onclick="location.href='input.html'"/>
+    </div>
+<input type="button" value="go back" onclick="location.href='../main.html'"/>
+</body>
+</html>

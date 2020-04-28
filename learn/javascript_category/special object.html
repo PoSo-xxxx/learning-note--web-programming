@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>special object.html</title>
+</head>
+<body>    
+	<input type="button" id="idbutstop" value="停止轉向連結" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("idbutstop").addEventListener("click", stopf);  //事件繫結
+
+        });
+
+        function stopf() {
+                //window.clearTimeout-停止計時器
+                window.clearTimeout(t);        
+        }
+
+        //轉向連結到 http://taipei.iiiedu.org.tw
+        //slide80,location.href-轉向連結到其它網址
+        //window.close() 關閉視窗
+        function f(){
+            location.href="http://taipei.iiideu.org.tw";
+        }
+        //window.setTimeout(window.close,2000);
+          let t = window.setTimeout(f,2000);
+
+        //window object:the highest layer of browser.
+        //window method:
+        //identifier = setTimeout(function, milliseconds):execute the function after milliseconds.
+        //clearTimeout(identifier):stop the identifier of function setTimeout.
+        //identifier = setInterval(function, millisecond):execute the function every milliseconds.
+        //clearInterval(identifier):stop the identifier of function of setInterval.
+    </script>
+
+
+
+
+    <script>
+    //location object:
+    //this object used for internet conncetion.
+    document.write("<pre>location information:<br>");
+    document.writeln("location protocol=" + location.protocol);
+    document.writeln("location hostname=" + location.hostname);
+    document.writeln("location port=" + location.port);
+    document.writeln("location host=" + location.host);
+    document.writeln("location pathname=" + location.pathname);
+    document.writeln("location hash=" + location.hash);                 
+    document.writeln("</pre>");
+    //href:link to other page or web address.
+    //protocol:the protocol this page are using.
+    //hostname:the name of host.
+    //port:the port of this local connection.
+    //host:imformation about host.
+    //pathname:the path of this page or web.
+    //hash:the hash function this page use.
+    </script>		
+
+
+
+
+    <!--the event object,difference between every browser-->
+    <!--HTML屬性事件處理程序-->
+    <!-- IE8 -->
+    <input type="button" id="idmouse1" value="HTML屬性事件(IE8)" onmousedown="mouseDown();" />
+    <!-- Firefox-->
+    <input type="button" id="idmouse1" value="HTML屬性事件(Firefox)" onmousedown="mouseDown(event);" />
+
+    <!--JavaScript屬性事件處理程序-->
+    <input type="button" id="idmouse2" value="JavaScript屬性事件" />
+    
+
+    <script>  
+            //JavaScript屬性事件處理程序       
+        document.getElementById("idmouse2").onmousedown=mouseDown;  //事件繫結
+
+        function mouseDown(nsevent) {  //以event物件作為參數來使用
+  
+            let theEvent;
+            // theEvent=nsevent?nsevent:event;  //三元運算子
+            // var z=5>3|| 6>5;
+            // alert(z);
+            theEvent=nsevent||window.event;  //or
+                // alert(theEvent.type)
+        }
+    
+
+        //IE10以下的瀏覽器(window 7),HTML屬性事件
+        //回傳1 表示使用者按下左鍵,chrome 0
+        //回傳4 表示使用者按下滾輪,chrome 1
+        //回傳2 表示使用者按下右鍵,chrome 2
+        function IEmouseDown() {    //IE8以前是透過全域變數window.event來取用這個物件
+            // alert(event.type);
+            // alert(event.button);
+            alert(event);
+            console.log(event);
+        }
+
+
+        //IE8以下的瀏覽器(window 7),HTML屬性事件
+        //回傳1 表示使用者按下左鍵
+        //回傳4 表示使用者按下滾輪
+        //回傳2 表示使用者按下右鍵
+        function FirefoxmouseDown(nsevent) {  //以event物件作為參數來使用            
+            // alert(nsevent.type);
+            // alert(nsevent.button);
+            // alert(nsevent);
+            // alert(event);
+        }
+
+        //because the definition and the execution process, the result in different browser amyhave different result.
+    </script>
+	
+
+
+
+    <!--the event objects, methods-->
+    <!--JavaScript屬性事件處理程序-->    
+    <input type="button" id="idbut" value="座標" />
+
+    <script> 
+        //鍵盤事件繫結
+        document.onkeydown=keyDown;  //大寫鍵，控制鍵 
+        // document.onkeypress=keyDown;  //大小寫鍵       
+
+        function keyDown() {  //firefox,IE,chrome           
+            alert(event.which);
+            if (event.altKey) alert("ALT");
+            if (event.ctrlKey) alert("CTRL");
+            if (event.shiftKey) alert("SHIFT");
+        }
+
+        //JavaScript屬性事件處理程序(IE9以上)座標屬性        
+        document.getElementById("idbut").onclick=CoordXY;  //座標coordinate
+
+        function CoordXY() 
+        {
+            alert("screenX="+event.screenX+"\nclientX="+event.clientX+"\noffsetX="+event.offsetX);
+        }
+        //the method of event object:
+        //type:the event type.
+        //button:return the pressed key from keyboard.
+        //which:return the pressed key in unicode encoding.
+        //altKey,ctrlKey,shiftKey:return true when pressing alt,ctrl,shift
+        //return false when not pressing  alt,crtl,shift.
+        //screenX, screenY:return the X,Y coordinate of screen.(the hardware,computer screen)
+        //clientX, clientY:return the X,Y coordinate of web page.(the browser window)
+        //offsetX, offsetY:return the X,Y coordinate of current selected block.(the tag)
+    </script> 
+
+
+	<!--document.getElementByTagName("NAME"):get all elements with tag"NAME"-->
+	<!--document.querySelecterAll(selectors):get all element with selector,
+		 this will create an array.-->
+
+
+
+    <!--image object-->
+    <div style="float:left;width:200px;height:343px;margin-top:20px;">
+            <img id="imgMap" alt="" src="images/map00.gif" usemap="#FPMap0" />
+            <map id="FPMap0" name="FPMap0">
+                <area id="idTaipei" class="imgbut" coords="136,21,144,13,151,29,145,38,137,21" shape="poly" />
+                <area id="idTaoyuan" class="imgbut"coords="95,38,120,22,132,34,125,45,138,64,128,78,95,37" shape="poly" />
+                <area id="idTaichung" class="imgbut" coords="46,113,58,89,87,104,120,91,134,100,122,113,81,122,70,134,45,112,45,112" shape="poly" />
+                <area id="idKaohsiung" class="imgbut" coords="18,241,39,242,86,185,98,201,76,243,72,250,46,251,39,283,25,259,18,240" shape="poly" />
+            </map>
+    </div>
+    <div id="mapdiv" style="float:left;width:auto;height:auto;"></div>
+    
+    <script>
+        //=============================================================
+        //1. 使用<area>物件的id
+        //2. 使用 document.getElementsByTagName("area")取得所有area元素
+        //3. 使用 document.querySelectorAll("area")取得所有area元素(slide 81)               
+        //=============================================================       
+        //document.getElementById("idTaipei").onmouseover=mouseOver;//事件繫結
+        //document.getElementById("idTaipei").onmouseout=mouseOut;
+        //document.getElementById("idTaipei").onclick=Click;
+        //document.getElementById("idTaoyuan").onmouseover=mouseOver;//事件繫結
+        //document.getElementById("idTaoyuan").onmouseout=mouseOut;
+        //document.getElementById("idTaoyuan").onclick=Click;
+        
+        let areas = document.querySelectorAll("area.imgbut");
+        
+        for (let value of areas)
+        {
+        	value.onmouseover = mouseOver;
+        	value.onmouseout = mouseOut;
+        	value.onclick = Click;
+        }
+       
+        function mouseOver() {
+            // alert(this.id);
+            // document.images[0].src = "images/MapTaipei.gif";
+            document.images[0].src = "images/Map"+this.id.substr(2)+".gif";
+        }
+
+
+        function mouseOut() {
+            document.images[0].src = "images/map00.gif";
+        }
+
+
+        function Click() {
+            // document.getElementById("mapdiv").innerHTML = "<img src='images/Taipei.gif'/>";
+            document.getElementById("mapdiv").innerHTML =
+             "<img src='images/"+this.id.substr(2)+".gif'/>";
+        }
+        //method of image object
+        //document.image:the set of image tags in this file, it is a read only object.
+        //can use array method to search,but can not be written.
+        //the element in document.image have the same properties as img.:-):-).......:-).
+    </script> 
+
+
+
+
+    <!--form object-->
+    <form action="http://192.168.39.55:8080/get.jsp" method="get">
+        <label>name:</label><input type="text" id="idName" name="txtName" value="abc" />
+        <span id="idsp"></span><br/>
+        <input type="checkbox" name="hobby" checked="checked" value="reading"/>reading
+        <input type="checkbox" name="hobby" value="game"/>game
+        <input type="checkbox" name="hobby" value="sleep"/>sleep
+        <br/>
+        <input type="submit" value="送出" />	
+        <input id="idbutton" type="button" value="check" />
+        <input id="idreset" type="button" value="reset" />
+        <input id="idsubmit" type="button" value="submit" />
+    </form>   
+
+    <script>       
+    document.getElementById("idbutton").onclick = checkf;//事件繫結
+    document.getElementById("idreset").onclick = resetf;
+    document.getElementById("idsubmit").onclick = submitf;
+
+    function checkf()
+    {
+     let eles=document.forms[0].elements
+     let eleLen=eles.length;
+     for (let i = 0; i < eleLen; i++)
+     {
+
+         if (eles[i].checked) alert(eles[i].value);
+     }
+
+    }
+
+    function resetf() {
+        document.forms[0].reset();
+    }
+
+    function submitf() {
+        let  theName=document.getElementById("idName").value;
+        if(theName=="")
+            document.getElementById("idsp").innerHTML="you must enter";
+        else
+            document.forms[0].submit();
+    }
+    //form object:
+    //document.form: the set of form tags in this file, it is a read only object.
+    //can use array method to search,but can not be written.
+    //the properties just like form.
+    //method:
+    //reset(),submit()
+</script>	
+</body>
+</html>

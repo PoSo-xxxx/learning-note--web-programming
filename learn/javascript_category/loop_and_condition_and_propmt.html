@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+
+<head>
+    <link rel="stylesheet" href="../learning.css">
+    <meta charset="utf-8"/>
+    <title>loop, condition and propmt</title>
+</head>
+<body>
+    <h2>loop, condition and propmt</h2>
+    <h3>prompt</h3>
+    <textarea rows="8" cols="100" disabled>
+<script>
+    //window.prompt:an alert window for accepting user input
+    let input=window.prompt("try it out");
+    console.log("your prompt input is: "+input);
+    //the input of javascript is always string,
+    //using parseInt or parseFloat for further use.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser.
+        <script>
+            //window.prompt:an alert window for accepting user input
+            let input=window.prompt("try it out");
+            console.log("your prompt input is: "+input);
+            //the input of javascript is always string,
+            //using parseInt or parseFloat for further use.
+        </script>
+    </div>
+    <h3>if</h3>
+    <textarea rows="14" cols="100" disabled>
+<script>
+    //if(condition) statement
+    //else statement
+    let age=parseInt(window.prompt("please input age:","10"));
+    if(age>0 && age<=6 || age>=65 )
+        console.log("if loop: "+age+" free");
+    else if(age>6 && age<=25 )
+        document.write("if loop: "+age+" student");
+    else if(age>25 && age<65 )
+        console.log("if loop: "+age+" full");
+    //if there is only one sentence of expression,
+    //the {} can be skip.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser.
+        <script>
+            //if(condition) statement
+            //else statement
+            let age=parseInt(window.prompt("please input age:","10"));
+            if(age>0 && age<=6 || age>=65 )
+                console.log("if loop: "+age+" free");
+            else if(age>6 && age<=25 )
+                document.write("if loop: "+age+" student");
+            else if(age>25 && age<65 )
+                console.log("if loop: "+age+" full");
+            //if there is only one sentence of expression,
+            //the {} can be skip.
+        </script>
+    </div>
+    <h3>for</h3>
+    <textarea rows="14" cols="100" disabled>
+<script>
+    //for (initial;condition;continue)
+    //	{statement}
+    let sum_for = 0;
+        for (let i = 1; i <= 5; i++)
+        {
+            //sum=sum+i;
+            sum_for += i;
+            console.log("for loop i=" + i + " sum=" + sum_for);
+        }
+    //a finite loop will execute the expression while condition is true.
+    //it usually run for a certain times.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br> press "F12" to open the console of the browser.
+        <script>
+            //for (initial;condition;continue)
+            //	{statement}
+            let sum_for = 0;
+                for (let i = 1; i <= 5; i++)
+                {
+                    //sum=sum+i;
+                    sum_for += i;
+                    console.log("for loop i=" + i + " sum=" + sum_for);
+                }
+            //a finite loop will execute the expression while condition is true.
+            //it usually run for a certain times.
+        </script>
+    </div>
+    <h3>switch</h3>
+    <textarea rows="20" cols="100" disabled>
+<script>
+    //switch (condition)
+    /*{
+    	case 1: statement1;
+        case 2: statement2;
+    		...
+    	default: statement_default;
+    }*/
+    let area = window.prompt("pleae input area no:");
+        switch (area)
+        {
+            case "100": console.log("switch: "+"中正區"); break;
+            case "104": console.log("switch: "+"中山區"); break;
+            case "107": console.log("switch: "+"大安區"); break;
+            default: console.log("switch: "+"other區"); break;
+        }
+    //changing the result depend on condition.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser.
+        <script>
+            //switch (condition)
+            /*{
+                case 1: statement1;
+                case 2: statement2;
+                    ...
+                default: statement_default;
+            }*/
+            let area = window.prompt("pleae input area no:");
+                switch (area)
+                {
+                    case "100": console.log("switch: "+"中正區"); break;
+                    case "104": console.log("switch: "+"中山區"); break;
+                    case "107": console.log("switch: "+"大安區"); break;
+                    default: console.log("switch: "+"other區"); break;
+                }
+            //changing the result depend on condition.
+        </script>
+    </div>
+    <h3>while</h3>
+    <textarea rows="14" cols="100" disabled>
+<script>
+    //while (condition)
+    let i = 1;
+        let sum_while = 0;
+        while (i <= 10)
+        {
+            sum_while += i;
+            console.log("while loop i=" + i + " sum=" + sum_while);
+            i = i + 2;
+        }
+    //statement: while loop used for uncertain times of loop,
+    //if the condition is true, then while will continuely execute.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser.
+        <script>
+            //while (condition)
+            let i = 1;
+                let sum_while = 0;
+                while (i <= 10)
+                {
+                    sum_while += i;
+                    console.log("while loop i=" + i + " sum=" + sum_while);
+                    i = i + 2;
+                }
+            //statement: while loop used for uncertain times of loop,
+            //if the condition is true, then while will continuely execute.
+        </script>
+    </div>
+    <h3>break</h3>
+    <textarea rows="17" cols="100" disabled>
+<script>
+    //break:it will leave the nearest loop, always uesd with if loop.
+    while (true)
+    {
+        text = prompt("請輸入quit指令中斷程式：")
+        if (text == "quit")
+        {
+            console.log("break: bye");
+            break;
+        }
+        console.log(text);
+    }
+    //continue:differnt from break, when if condition is true,
+    //it will skip the loop for once.
+</script>
+    </textarea>
+    <div>
+        demonstrate<br>press "F12" to open the console of the browser.
+        <script>
+            //break:it will leave the nearest loop, always uesd with if loop.
+            while (true)
+            {
+                text = prompt("請輸入quit指令中斷程式：")
+                if (text == "quit")
+                {
+                    console.log("break: bye");
+                    break;
+                }
+                console.log(text);
+            }
+            //continue:differnt from break, when if condition is true,
+            //it will skip the loop for once.
+        </script>
+    </div>
+    <br><input type="button" value="go back" onclick="location.href='../javascript_main.html'">
+</body>
+</html>

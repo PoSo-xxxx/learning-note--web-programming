@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:black">
+<head>
+	<title>style(css)</title>
+    <link rel="stylesheet"href="../learning.css">
+    <link rel="stylesheet" href="test.css">
+
+	<meta charset="UTF-8">
+    <meta name="application-name" content="style:css introduction">
+    <meta name="description" content="this website is for web language learning">
+    <meta name="keyword" content="html, css, javascript">
+    <meta name="author" content="Power Teng">
+    <meta name="generator" content="visual studio code">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>style(css)</h1>
+    <p>define the appearence of a tag, using css format.</p>
+    <div>
+        <h2>CSS</h2>
+        CSS:(Cascading Style Sheet) is a format for ddefining the apearence of a tag in html.<br>
+        format:selector:{attribute:value;}<br>
+            <ul>
+                <li>seletor:a tag, class or id, which kind of block to define.</li>
+                <li>the declartion:</li>
+                    <ul>
+                        <li>tag->tag</li>
+                        <li>class->.class</li>
+                        <li>id->#id</li>
+                        <li>tag with class->tag.class</li>
+                        <li>tag with id->tag#id</li>
+                    </ul>
+            </ul>
+    </div>
+
+
+    <h2>usage of style(css)</h2>
+    <p>there are three different ways to apply css to html.</p>
+    <ul>
+        <li>inline</li>
+        <li>embedding</li>
+        <li>link</li>
+    </ul>
+    <div>
+        <h3>inline</h3>
+        <p>define the style when declaring a tag.</p>
+        <textarea rows="2" cols="100" disabled>
+<p style="color:violet">this is inline style.</p>
+        </textarea><br>
+        demonstrate:
+        <p style="color:violet">this is inline style.</p>
+    </div>
+
+    <div>
+        <h3>embedding</h3>
+        <p>define a format in head or body block, using tag-style.</p>
+        <textarea rows="5" cols="100" disabled>
+<style>
+    p{color:"violet";}
+</style>
+    <p>this is embedding method</p>
+        </textarea><br>
+        demonstrate:
+        <style>
+            p#t1{color:violet;}
+        </style>
+            <p id="t1">this is embedding method</p>
+    </div>
+
+    <div>
+        <h3>link</h3>
+        <p>make a css file, adn then link to the html file.</p>
+        in css file-test.css:<br>
+        <textarea rows="2"cols="100" disabled>
+p#t{color:"violet";}
+        </textarea><br>
+        
+        in html file:<br>
+        <textarea rows="4" cols="100">
+<link rel="stylesheet" href="test.css">
+... 
+    <p id="t2">this is the third method.</p>
+        </textarea><br>
+
+        demonstrate:
+        <p id="t2">this is the third method.</p>
+        <ul>
+            <li>link:a tag define the link with other file, must declare in head.</li>
+        </ul>
+    </div>
+
+    <h2>element of tag in css:</h2>
+    <ul>
+        <li><h3>for character style:</h3></li>
+            <ul>
+                <li>text-decoration:none | underline | overline | line-through</li>
+                <li>text-transform:none | capitalize | uppercase | lowercase</li>
+                <li>color: color's name | rgb(r, g, b) | #XXXXXX(hexadecimal color code)</li>
+                <li>font-family: font's name</li>
+                <li>font-weight:100~900 | normal(400) | bold(700) | bolder | lighter</li>
+                <li>font-style:normal | italic | oblique</li>
+                <li>font-size:</li>
+                    <ul>
+                        <li>absolute size:xx-small | x-small | small | medium | large | x-large | xx-large</li>
+                        <li>relative size:larger smaller</li>
+                        <li>length:in | cm | mm | pt<br> | pc | em | ex | px</li>
+                        <li>proportion:em | %</li>
+                    </ul>
+            </ul>
+        <li><h3>border:</h3></li>
+            <ul>
+                <li>border: border-width | border-style | color</li>
+                <li>border-width:</li>
+                    <ul>
+                        <li>thin | medium | thick</li>
+                        <li>unit:pt | in | cm | px</li>
+                    </ul>
+                <li>border-style:none | solid | double | dotted | dashed | groove | ridge | inset | outset</li>
+                <li>color: color's name | rgb(r, g, b) | #XXXXXX(hexadecimal color code)</li>
+            </ul>
+        <li><h3>a(hyperlink):</h3></li>
+            <ul>
+                <li>link:define the style of hyperlink.</li>
+                <li>visited:define the style of visited hyperlink.</li>
+                <li>hover:define the style when mouse move over the hyperlink.</li>
+                <li>active:define the style of a seleceted hyperlink.</li>
+            </ul>
+        <li><h3>list:</h3></li>
+            <ul>
+                <li>list-style-type:none | disc | circle | square | decimal | decimal-leadinf-zero | lower-alpha | upper-alpha | upper-roman</li>
+                <li>list-style-image:url</li>
+                <li>list-style-position:inside | outside</li>
+            </ul>
+    </ul>
+    <div>
+        <h2>block:</h2>
+        <p>each tag is a block in html, a block is made by content, padding, border and margin.</p><br>
+        for example,a block is:<br>
+        <img src="images/block model.png" title="block model of tag in html."><br>
+        <h3>the element in block:</h3>
+        <ul>
+            <li>width</li>
+            <li>height</li>
+            <li>padding:padding-top | padding-right | padding-bottom | padding-left<br><p class="warning">unit: the length unit.</p></li>
+            <li>margin:margin-top | margin-right | margin-bottom | margin-left<br><p class="warning">unit: the length unit.</p></li>
+            <li>border:</li>
+                <ul>
+                    <li>border-top | border-right | border-bottom | border-left.</li>
+                    <li>radius:</li>
+                        <ul>
+                            <li>border-radius: length</li>
+                            <li>border-top-left-radius | border-top-right-radius | border-bottom-left-radius | border-bottom-right-radius</li>
+                        </ul>
+                    <li>style and color elements.</li>
+                </ul>
+            <li>content has background-color.</li>
+        </ul>
+    </div>
+
+    <h2>float&clear:</h2>
+    <p>the special element in css.</p>
+    <ul>
+        <li>float:none | left | right<br><p>the block which have set the float, it will float next to the closest block near it.</p></li>
+        <li>cleat:none | left | right<br><p>cancel the float effect to a block which near the floating block.</p></li>
+    </ul>
+
+    <input type="button" value="go back" onclick="location.href='../main.html'"/>
+</body>
+</html>

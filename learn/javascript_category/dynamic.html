@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>dynamic.html</title>
+		<style type="text/css">
+			.b{
+				color:blue;
+				font-family:Arial;
+				font-size:24px;
+			}
+			.r{
+				color:red;
+				font-family:"Script MT Bold";
+				font-size:36px;
+            }
+            /* css 前綴詞
+                -moz- for Firefox, 
+                -webkit- for Safari and Chrome,
+                 -o- for Opera,
+                -ms- for Internet Explorer
+            */
+            .s {
+                -webkit-filter: grayscale(1); /*沒有任何色彩的黑白影像*/
+            }
+
+            .n {
+                -webkit-filter: grayscale(0); /*顏色不變*/
+            }
+		</style>
+	</head>
+
+	<body>
+	     <!--dynamic style changing example 1-->
+        <h1 id="h" class="b" >this is heading 1</h1><br>
+
+        <script>
+            document.getElementById("h").onmouseover = mouseOver;  //事件繫結，滑鼠滑入
+            document.getElementById("h").onmouseout = mouseOut;    //事件繫結，滑鼠滑出      
+    
+            function mouseOver()
+            {
+                //動態樣式改變，方法 1
+				// this.style.color="red";
+
+                //動態樣式改變，方法 2
+				this.className="r";
+            }
+    
+            function mouseOut()
+            {
+                //動態樣式改變，方法 1
+				// this.style.color="blue";
+
+                //動態樣式改變，方法 2
+				this.className="b";
+            }
+            //Q:can we alternate with method 1 and 2?
+            //No,because the javascript will overwirte the former expression.
+        </script> 
+        
+
+
+
+        <!--dynamic style changing example 2-->
+        <img id="idstar" class="s" src="Images/star.gif"/><br>
+        
+        <script>
+        // http://blog.shihshih.com/css-filter/
+        
+        document.getElementById("idstar").onmouseover = mouseOver;  //事件繫結，滑鼠滑入
+        document.getElementById("idstar").onmouseout = mouseOut;    //事件繫結，滑鼠滑出       
+
+        function mouseOver() {
+            document.getElementById("idstar").className = "n";
+        }
+
+        function mouseOut() {
+            document.getElementById("idstar").className = "s";
+        }
+        </script>
+
+
+
+
+       <h1 id="h1">this is heading 1</h1>
+		<input type="button" id="butinnerText" value="textContent" />
+		<input type="button" id="butinnerHTML" value="innerHTML" />
+		<input type="button" id="butouterText" value="outerText" />
+       <input type="button" id="butouterHTML" value="outerHTML" /><br>
+
+        <script>
+        document.getElementById("butinnerText").onclick = TextContent;  //事件繫結
+        document.getElementById("butinnerHTML").onclick = InnerHTML;
+        document.getElementById("butouterText").onclick = OuterText;
+        document.getElementById("butouterHTML").onclick = OuterHTML;
+
+            function TextContent()
+            {
+            document.getElementById("h1").textContent = "<i>italic</i>";  //italic 斜體
+            //    <h1 id="h"><i>italic</i></h1>
+            }
+    
+            function InnerHTML()
+            {
+                document.getElementById("h1").innerHTML = "<i>italic</i>";
+            }
+    
+            function OuterText()
+            {
+                document.getElementById("h1").outerText = "<i>italic</i>";  
+            }
+    
+            function OuterHTML()
+            {
+                document.getElementById("h1").outerHTML = "<i>italic</i>";
+            }
+
+            //directly change the content in or outside the tag.
+            //for example:
+            //              <p>tesing</p>
+            //
+            //                        |    into plaintext   |   into a new tag
+            //----------------------------------------------------------------------
+            //replace the tag         |       outerText     |      outerHTML
+            //----------------------------------------------------------------------
+            //only replace the content|      textContent    |      innerHTML
+
+        </script>
+       
+
+
+
+        <h1 id="h2" style="background-color:yellow">this is heading 1</h1>
+		<input type="button" id="butbb" value="BeforeBegin" />
+		<input type="button" id="butab" value="AfterBegin" />
+		<input type="button" id="butbe" value="BeforeEnd" />
+		<input type="button" id="butae" value="AfterEnd" /><br>
+
+        <script>
+            document.getElementById("butbb").onclick=bb;  //事件繫結
+            document.getElementById("butab").onclick=ab;
+            document.getElementById("butbe").onclick=be;
+            document.getElementById("butae").onclick=ae;
+           
+            function bb()
+            {
+            document.getElementById("h2").insertAdjacentHTML("beforebegin", "add BeforeBegin aaaa");
+            }
+    
+            function ab()
+            {
+            document.getElementById("h2").insertAdjacentHTML("afterbegin", "add AfterBegin aaaa");
+            }
+    
+            function be()
+            {
+            document.getElementById("h2").insertAdjacentHTML("beforeend", "add BeforeEnd zzzzz");
+            }
+    
+            function ae()
+            {
+            document.getElementById("h2").insertAdjacentHTML("afterend", "add AfterEnd zzzzz");
+            }
+
+            //insertAdjacentHTML:append HTML tag.
+            //insertAdjacentText:append plaintext.
+            //for example:
+            //        1.<p>2.    testing    3.</p>4.
+            //           |                      |
+            //         begin                   end
+            //beforebegin(1.):in front of <p>
+            //afterbegin(2.):behind <p>, but in front of testing
+            //beforeend(3.):in front of end
+            //afterend(4.):behind the end
+        </script>
+	</body>
+</html>
